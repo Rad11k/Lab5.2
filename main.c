@@ -16,7 +16,7 @@ int main() {
   float **tabl = NULL, **tablBin = NULL;
 
 
-  FILE *Data, *Txt, *fileBin;
+  FILE *Data == NULL, *Txt == NULL, *fileBin == NULL;
   
   Data = fopen(Data_IN", "r");
                
@@ -24,7 +24,10 @@ int main() {
                
   fileBin = fopen(fileBin_OUT, "w+b");
 
-               
+  if(Data  == NULL || Txt_OUT == NULL || fileBin == NULL){
+    printf("error open file");
+    exit(0);
+  }
                
   while (ch = getc(Data) != '\n');
                
