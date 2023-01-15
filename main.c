@@ -4,9 +4,9 @@
 
 double Func(double x);
 
-#define DataN "Data.txt"
-#define TxtN "Txt.txt"
-#define fileBinN "fileBin.bin"
+#define Data_IN "Data.txt"
+#define Txt_OUT "Txt.txt"
+#define fileBin_OUT "fileBin.bin"
 
 
 int main() {
@@ -18,23 +18,28 @@ int main() {
 
   FILE *Data, *Txt, *fileBin;
   
-  Data = fopen(DataN", "r");
+  Data = fopen(Data_IN", "r");
                
-  Txt = fopen(TxtN, "w");
+  Txt = fopen(Txt_OUT, "w");
                
-  fileBin = fopen(fileBinN, "w+b");
+  fileBin = fopen(fileBin_OUT, "w+b");
 
-
+               
+               
   while (ch = getc(Data) != '\n');
+               
   putchar(ch);
+               
   fscanf(Data, " %f %f %d %f", &a, &b, &N, &step);
 
   delta = (b - a) / (N - 1);
+               
   if (N == 0) {
     delta = step;
     N = ((b - a) / delta) + 1;
   }
 
+               
   tabl = (int**)calloc(N, sizeof(int));
   tablBin = (int**)calloc(N, sizeof(int));
   for (int i = 0; i < N; i++) {
