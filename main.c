@@ -4,6 +4,11 @@
 
 double Func(double x);
 
+#define DataN "Data.txt"
+#define TxtN "Txt.txt"
+#define fileBinN "fileBin.bin"
+
+
 int main() {
 
   float a, b, step, delta, x, put_bin;
@@ -12,9 +17,12 @@ int main() {
 
 
   FILE *Data, *Txt, *fileBin;
-  Data = fopen("Data.txt", "r");
-  Txt = fopen("Txt.txt", "w");
-  fileBin = fopen("fileBin.bin", "w+b");
+  
+  Data = fopen(DataN", "r");
+               
+  Txt = fopen(TxtN, "w");
+               
+  fileBin = fopen(fileBinN, "w+b");
 
 
   while (ch = getc(Data) != '\n');
